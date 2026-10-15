@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Space Cowboy</title>
+  <meta name="description" content="Portfolio — a Cowboy Bebop–inspired personal site." />
+  <meta name="theme-color" content="#0c0b0a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0b0a'/%3E%3Crect x='8' y='8' width='22' height='48' fill='%23e4572e'/%3E%3Crect x='34' y='8' width='22' height='22' fill='%232457a6'/%3E%3Crect x='34' y='34' width='22' height='22' fill='%23f3b52f'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Playfair+Display:ital,wght@1,500;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="content.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- 3, 2, 1… -->
+  <div class="intro" id="intro">
+    <div class="intro__count" id="introCount" aria-hidden="true"></div>
+    <div class="intro__stripes" aria-hidden="true"><i></i><i></i><i></i></div>
+    <button class="intro__skip mono" id="introSkip" type="button">Skip intro ▸</button>
+  </div>
+
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="logo" href="#top" aria-label="Back to top">
+      <span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>BEBOP</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="#sessions"><span>01</span>Sessions</a></li>
+        <li><a href="#crew"><span>02</span>Crew</a></li>
+        <li><a href="#log"><span>03</span>Log</a></li>
+        <li><a href="#bounty"><span>04</span>Bounty</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i>
+    </button>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav aria-label="Mobile">
+      <a href="#sessions"><small>01</small>Sessions</a>
+      <a href="#crew"><small>02</small>Crew</a>
+      <a href="#log"><small>03</small>Log</a>
+      <a href="#bounty"><small>04</small>Bounty</a>
+    </nav>
+    <div class="menu__stripes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" data-session="00" data-title="Opening">
+      <div class="hero__blocks" id="heroBlocks" aria-hidden="true">
+        <span class="blk blk--1" style="--d:18;--delay:.05s"></span>
+        <span class="blk blk--2" style="--d:-10;--delay:.18s"></span>
+        <span class="blk blk--3" style="--d:26;--delay:.3s"></span>
+        <span class="blk blk--4" style="--d:-22;--delay:.42s"></span>
+        <span class="blk blk--5" style="--d:6;--delay:.0s"></span>
+        <span class="blk blk--6" style="--d:-30;--delay:.5s"></span>
+        <span class="blk blk--7" style="--d:12;--delay:.62s"></span>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__kicker"><span class="label label--orange mono" id="heroAlias"></span></p>
+        <h1 class="hero__name" id="heroName"></h1>
+        <p class="hero__role"><span class="label mono" id="heroRole"></span></p>
+        <p class="hero__tag serif"><span id="heroTagline"></span></p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#sessions">Watch the sessions <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#bounty">Claim the bounty</a>
+        </div>
+      </div>
+
+      <p class="hero__ep mono" aria-hidden="true">Session #00 — Portfolio Blues</p>
+
+      <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+    </section>
+
+    <!-- SESSIONS / PROJECTS -->
+    <section class="section" id="sessions" data-session="01" data-title="Sessions">
+      <span class="ghost-word" aria-hidden="true">Sessions</span>
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-head__no mono">Session #01</p>
+          <h2 class="sec-head__title">Sessions</h2>
+          <p class="sec-head__sub serif">— the jobs we took</p>
+        </header>
+        <div class="eps" id="eps"></div>
+      </div>
+    </section>
+
+    <!-- CREW / ABOUT -->
+    <section class="section" id="crew" data-session="02" data-title="Crew">
+      <span class="ghost-word ghost-word--right" aria-hidden="true">Bebop</span>
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-head__no mono">Session #02</p>
+          <h2 class="sec-head__title">Crew File</h2>
+          <p class="sec-head__sub serif">— who's flying this thing</p>
+        </header>
+        <div class="crew">
+          <div id="dossier"></div>
+          <div>
+            <p class="band__label mono reveal">The band — what I play</p>
+            <div class="band" id="band"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOG / TIMELINE -->
+    <section class="section" id="log" data-session="03" data-title="Ship's Log">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-head__no mono">Session #03</p>
+          <h2 class="sec-head__title">Ship's Log</h2>
+          <p class="sec-head__sub serif">— ports of call</p>
+        </header>
+        <ol class="log" id="logList"></ol>
+      </div>
+    </section>
+
+    <!-- BOUNTY / CONTACT -->
+    <section class="section" id="bounty" data-session="04" data-title="Big Shot">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-head__no mono">Session #04</p>
+          <h2 class="sec-head__title">Big Shot</h2>
+          <p class="sec-head__sub serif">— bounty bulletin</p>
+        </header>
+        <div class="bounty">
+          <div class="bounty__copy reveal">
+            <h3 class="bounty__title">Got a job for the&nbsp;Bebop?</h3>
+            <p class="bounty__text">Research, a collaboration, or a role that needs someone stubborn about generalization. Send word and I'll answer.</p>
+            <ul class="contact" id="contact"></ul>
+          </div>
+          <div id="poster"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="end" data-session="∞" data-title="End Card">
+    <p class="see-you" aria-label="See you space cowboy…"><span id="seeYou"></span><span class="caret" aria-hidden="true"></span></p>
+    <div class="footer__meta mono">
+      <span>© <span id="year"></span> <span id="footName"></span></span>
+      <span>Built with HTML, CSS &amp; jazz</span>
+      <span>Fan tribute · Cowboy Bebop © Sunrise</span>
+    </div>
+  </footer>
+
+  <div class="np" id="np" aria-hidden="true">
+    <span class="np__eq"><i></i><i></i><i></i><i></i></span>
+    <span id="npText">Now playing</span>
+  </div>
+
+  <noscript><p style="padding:2rem;color:#efe4cc">This site needs JavaScript to load its content.</p></noscript>
+</body>
+</html>
