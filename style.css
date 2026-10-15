@@ -150,6 +150,47 @@ img { max-width: 100%; display: block; }
   padding: 8px 14px; cursor: pointer;
 }
 
+.hero__cigarette-button {
+  display: grid; place-items: center;
+  width: 50px; min-height: 42px; padding: 0;
+  border: 0; background: transparent; cursor: pointer; appearance: none;
+}
+.hero__cigarette-button svg {
+  display: block; width: 48px; height: 20px;
+  transform: rotate(-12deg);
+  transition: transform 0.25s var(--ease), filter 0.25s;
+}
+.hero__cigarette-button:hover svg,
+.hero__cigarette-button:focus-visible svg { transform: rotate(0); filter: brightness(1.15); }
+
+.cigarette-egg {
+  position: fixed; inset: 0; z-index: 1100;
+  display: none; place-items: center;
+  width: 100%; height: 100%; padding: 24px;
+  overflow-y: auto;
+  border: 0; background: rgba(12, 11, 10, 0.88); color: var(--paper);
+}
+.cigarette-egg.is-open { display: grid; }
+.cigarette-egg > img,
+.cigarette-egg > p,
+.cigarette-egg__close { position: relative; grid-column: 1; }
+.cigarette-egg > img {
+  align-self: end; width: min(88vw, 620px); max-height: 70vh;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 100px rgba(0, 0, 0, 0.65);
+}
+.cigarette-egg > p {
+  align-self: start; margin: 16px 0 0; color: var(--paper-2);
+  text-align: center; font-size: 0.68rem;
+}
+.cigarette-egg__close {
+  position: fixed; top: 20px; right: 20px; z-index: 1;
+  padding: 4px 10px;
+  border: 1px solid var(--line); background: var(--ink); color: var(--paper);
+  cursor: pointer; font: inherit; font-size: 1.1rem;
+}
+
 /* ---------- nav ---------- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 800;

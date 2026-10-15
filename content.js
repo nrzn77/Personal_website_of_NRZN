@@ -1,8 +1,4 @@
-/* ==========================================================================
-   EDIT ME — everything on the site is generated from this one object.
-   Accent colors: "orange" | "blue" | "yellow" | "red" | "teal"
-   Empty url ("") hides a link.
-   ========================================================================== */
+
 window.SITE = {
   name: "Nirjon Mobarak Talukder",
   heroName: "Nirjon Talukder", // shorter version for the giant hero title
@@ -13,7 +9,7 @@ window.SITE = {
   location: "Dhaka, Bangladesh",
   status: "Open to work",
   email: "nirjonmobarak@iut-dhaka.edu",
-  resume: "assets/Nirjon_Resume.pdf", // e.g. "assets/Nirjon_Resume.pdf"
+  resume: "assets/Nirjon_Resume_web.pdf", // e.g. "assets/Nirjon_Resume.pdf"
 
   links: [
     { label: "GitHub", url: "https://github.com/nrzn77" },
@@ -32,7 +28,7 @@ window.SITE = {
   ],
 
   bio: [
-    "CSE undergrad at the Islamic University of Technology. My thesis hides who is speaking without losing what was said, using conditional invertible networks so the original voice can be restored exactly with a key.",
+    "Finished my BSc in Computer Science and Engineering at the Islamic University of Technology. My thesis hides who is speaking without losing what was said, using conditional invertible networks so the original voice can be restored exactly with a key.",
     "I also work on cross-lingual Bangla–English NLP and build backends in Spring Boot and PostgreSQL. I like both the model side and the systems side of the work.",
   ],
 

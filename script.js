@@ -378,6 +378,36 @@
     });
   }
 
+  function cigaretteEgg() {
+    const trigger = $("#cigaretteEgg");
+    const dialog = $("#cigaretteDialog");
+    const gif = $("img", dialog);
+    const closeButton = $("#cigaretteClose");
+    const close = () => {
+      dialog.classList.remove("is-open");
+      dialog.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+      trigger.focus();
+    };
+    closeButton.addEventListener("click", close);
+    trigger.addEventListener("click", () => {
+      if (!gif.hasAttribute("src")) gif.src = gif.dataset.src;
+      document.body.classList.add("no-scroll");
+      dialog.classList.add("is-open");
+      dialog.setAttribute("aria-hidden", "false");
+      closeButton.focus();
+    });
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) close();
+    });
+    addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dialog.classList.contains("is-open")) {
+        e.preventDefault();
+        close();
+      }
+    });
+  }
+
   /* ------------------------------------------------------------------ go */
   render();
   starfield();
@@ -385,5 +415,6 @@
   observers();
   pointer();
   copyEmail();
+  cigaretteEgg();
   intro(() => requestAnimationFrame(() => document.body.classList.add("ready")));
 })();

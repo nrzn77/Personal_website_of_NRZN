@@ -78,6 +78,14 @@
         <div class="hero__cta">
           <a class="btn btn--solid" href="#sessions">Watch the sessions <span aria-hidden="true">→</span></a>
           <a class="btn btn--ghost" href="#bounty">Claim the bounty</a>
+          <button class="hero__cigarette-button" id="cigaretteEgg" type="button" aria-label="Open the Spike Spiegel Easter egg" title="A little Bebop Easter egg">
+            <svg aria-hidden="true" viewBox="0 0 64 24">
+              <path d="M4 7h48v10H4z" fill="#efe4cc" />
+              <path d="M4 7h13v10H4z" fill="#e4572e" />
+              <path d="M52 7h8v10h-8z" fill="#c62f2f" />
+              <path d="M56 7v10" stroke="#0c0b0a" stroke-width="1.5" />
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -149,6 +157,12 @@
       </div>
     </section>
   </main>
+
+  <div class="cigarette-egg" id="cigaretteDialog" role="dialog" aria-modal="true" aria-label="Spike Spiegel Easter egg" aria-hidden="true" tabindex="-1">
+    <button class="cigarette-egg__close mono" id="cigaretteClose" type="button" aria-label="Close Easter egg">×</button>
+    <img data-src="assets/Spike.gif" alt="Spike Spiegel lighting a cigarette" />
+    <p class="mono">Whatever happens, happens.</p>
+  </div>
 
   <footer class="footer" id="end" data-session="∞" data-title="End Card">
     <p class="see-you" aria-label="See you space cowboy…"><span id="seeYou"></span><span class="caret" aria-hidden="true"></span></p>
